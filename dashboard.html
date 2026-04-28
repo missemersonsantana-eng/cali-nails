@@ -1,1 +1,197 @@
-//admin
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cali Nails - Dashboard</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      background: #f4f6f9;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      background: linear-gradient(180deg, #ff4da6, #ff85c1);
+      color: white;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      margin-bottom: 15px;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* MAIN */
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .header {
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .card p {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* TABELA */
+    .table-container {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      text-align: left;
+      padding-bottom: 10px;
+      color: #999;
+      font-size: 14px;
+    }
+
+    td {
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .status {
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+    }
+
+    .confirmado {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .cancelado {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    button {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #ff4da6;
+      color: white;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e60073;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+    <h2>Cali Nails 💅</h2>
+    <a href="#">Dashboard</a>
+    <a href="agendamento.html">Agendamentos</a>
+    <a href="#">Clientes</a>
+  </div>
+
+  <!-- MAIN -->
+
+  <div class="main">
+
+<div class="header">
+  <h1>Dashboard</h1>
+  <p>Visão geral do seu negócio</p>
+</div>
+
+<!-- CARDS -->
+<div class="cards">
+  <div class="card">
+    <h3>Agendamentos</h3>
+    <p id="totalAgendamentos">0</p>
+  </div>
+
+  <div class="card">
+    <h3>Faturamento</h3>
+    <p id="faturamento">R$ 0</p>
+  </div>
+</div>
+
+<!-- TABELA -->
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Data</th>
+        <th>Hora</th>
+        <th>Serviço</th>
+        <th>Status</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+
+    <tbody id="tabelaAgendamentos"></tbody>
+  </table>
+</div>
+
+  </div>
+
+  <script type="module" src="js/dashboard.js"></script>
+
+</body>
+</html>
